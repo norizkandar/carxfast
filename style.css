@@ -1,0 +1,175 @@
+
+/* =========================================
+   INOVAX: STREET LEGENDS
+   Main Interface Styles
+========================================= */
+
+:root {
+  --background: #080b10;
+  --panel: #101a27;
+  --blue: #76d7ff;
+  --blue-dark: #18344c;
+  --white: #ffffff;
+  --muted: #a9b9ca;
+  --border: #344c62;
+  --success: #6ee7a0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--background);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--white);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+  font: inherit;
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse at 50% 45%,
+      var(--blue-dark) 0%,
+      var(--background) 70%
+    );
+}
+
+section {
+  width: 100%;
+  max-width: 760px;
+  animation: appear 0.8s ease both;
+}
+
+.studio {
+  color: var(--blue);
+  font-size: 12px;
+  letter-spacing: 6px;
+}
+
+h1 {
+  margin: 22px 0 12px;
+  font-size: clamp(38px, 8vw, 76px);
+  line-height: 1.02;
+  font-weight: 900;
+  letter-spacing: clamp(3px, 1vw, 8px);
+  text-shadow: 0 0 35px #76d7ff22;
+}
+
+p {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.status {
+  display: table;
+  margin: 28px auto;
+  padding: 12px 18px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #101a27cc;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.dot {
+  margin-right: 7px;
+  color: var(--success);
+}
+
+button {
+  padding: 15px 28px;
+  border: 1px solid var(--blue);
+  border-radius: 6px;
+  background: var(--blue);
+  color: #08111b;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  background: #b4ebff;
+  box-shadow: 0 8px 32px #76d7ff33;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 4px;
+}
+
+footer {
+  margin-top: 46px;
+  color: #718398;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 20px;
+  }
+
+  .studio {
+    font-size: 10px;
+    letter-spacing: 4px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  footer {
+    font-size: 9px;
+    line-height: 1.8;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
