@@ -1,175 +1,224 @@
 
-/* =========================================
-   INOVAX: STREET LEGENDS
-   Main Interface Styles
-========================================= */
-
-:root {
-  --background: #080b10;
-  --panel: #101a27;
-  --blue: #76d7ff;
-  --blue-dark: #18344c;
-  --white: #ffffff;
-  --muted: #a9b9ca;
-  --border: #344c62;
-  --success: #6ee7a0;
-}
-
 * {
   box-sizing: border-box;
 }
 
-html {
-  min-height: 100%;
-  background: var(--background);
-}
-
+html,
 body {
-  min-height: 100vh;
   margin: 0;
-  color: var(--white);
-  background: var(--background);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #080b10;
+  color: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-button {
-  font: inherit;
+body {
+  position: relative;
 }
 
-main {
-  min-height: 100vh;
+canvas {
+  position: fixed;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+#hud {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.brand {
+  position: absolute;
+  top: 22px;
+  left: 24px;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-shadow: 0 2px 12px #000;
+}
+
+.brand span {
+  display: block;
+  margin-top: 5px;
+  color: #65caff;
+  font-size: 10px;
+  letter-spacing: 4px;
+}
+
+.pill {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  padding: 10px 15px;
+  border: 1px solid #65caff80;
+  border-radius: 30px;
+  background: #08131dcc;
+  color: #9edfff;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+#speedBox {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  min-width: 150px;
+  padding: 16px 20px;
+  border: 1px solid #ffffff30;
+  border-radius: 14px;
+  background: #080b10cc;
+  text-align: right;
+  backdrop-filter: blur(8px);
+}
+
+#speed {
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+#speedBox small {
+  color: #65caff;
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+#help {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  color: #ffffffcc;
+  font-size: 12px;
+  line-height: 1.8;
+  text-shadow: 0 2px 8px #000;
+}
+
+#loading {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  gap: 12px;
+  background: #080b10;
   text-align: center;
-  overflow: hidden;
-  background:
-    radial-gradient(
-      ellipse at 50% 45%,
-      var(--blue-dark) 0%,
-      var(--background) 70%
-    );
 }
 
-section {
-  width: 100%;
-  max-width: 760px;
-  animation: appear 0.8s ease both;
-}
-
-.studio {
-  color: var(--blue);
-  font-size: 12px;
-  letter-spacing: 6px;
-}
-
-h1 {
-  margin: 22px 0 12px;
-  font-size: clamp(38px, 8vw, 76px);
-  line-height: 1.02;
+#loading h1 {
+  margin: 0;
+  font-size: clamp(30px, 7vw, 60px);
   font-weight: 900;
-  letter-spacing: clamp(3px, 1vw, 8px);
-  text-shadow: 0 0 35px #76d7ff22;
+  letter-spacing: 5px;
 }
 
-p {
-  color: var(--muted);
-  font-size: 15px;
-  line-height: 1.8;
-}
-
-.status {
-  display: table;
-  margin: 28px auto;
-  padding: 12px 18px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: #101a27cc;
-  font-size: 11px;
-  letter-spacing: 2px;
-}
-
-.dot {
-  margin-right: 7px;
-  color: var(--success);
-}
-
-button {
-  padding: 15px 28px;
-  border: 1px solid var(--blue);
-  border-radius: 6px;
-  background: var(--blue);
-  color: #08111b;
+#loading p {
+  color: #65caff;
   font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 2px;
+  letter-spacing: 4px;
+}
+
+#loading button,
+#reset {
+  padding: 12px 20px;
+  border: 1px solid #65caff;
+  border-radius: 8px;
+  background: #102434;
+  color: #ffffff;
+  font-weight: bold;
   cursor: pointer;
-  transition:
-    transform 0.2s ease,
-    background 0.2s ease,
-    box-shadow 0.2s ease;
 }
 
-button:hover {
-  transform: translateY(-2px);
-  background: #b4ebff;
-  box-shadow: 0 8px 32px #76d7ff33;
+#touch {
+  position: fixed;
+  inset: auto 0 18px;
+  z-index: 4;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 18px;
+  pointer-events: none;
 }
 
-button:active {
-  transform: scale(0.98);
+.pad {
+  display: flex;
+  gap: 8px;
 }
 
-button:focus-visible {
-  outline: 3px solid white;
-  outline-offset: 4px;
+.ctrl {
+  width: 58px;
+  height: 58px;
+  border: 1px solid #ffffff70;
+  border-radius: 14px;
+  background: #08131dcc;
+  color: white;
+  font-size: 22px;
+  pointer-events: auto;
+  touch-action: none;
 }
 
-footer {
-  margin-top: 46px;
-  color: #718398;
-  font-size: 10px;
-  letter-spacing: 2px;
+.ctrl:active {
+  background: #17618a;
 }
 
-@keyframes appear {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
+#reset {
+  position: fixed;
+  top: 75px;
+  right: 24px;
+  z-index: 3;
+  font-size: 11px;
+}
+
+@media (max-width: 600px) {
+  .brand {
+    top: 16px;
+    left: 14px;
+    font-size: 18px;
   }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (max-width: 480px) {
-  main {
-    padding: 20px;
-  }
-
-  .studio {
-    font-size: 10px;
-    letter-spacing: 4px;
-  }
-
-  p {
-    font-size: 14px;
-  }
-
-  footer {
+  .pill {
+    top: 16px;
+    right: 14px;
+    padding: 8px 10px;
     font-size: 9px;
-    line-height: 1.8;
   }
-}
 
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
+  #speedBox {
+    right: 14px;
+    bottom: 95px;
+    min-width: 110px;
+    padding: 12px;
+  }
+
+  #speed {
+    font-size: 36px;
+  }
+
+  #help {
+    left: 14px;
+    bottom: 100px;
+    font-size: 10px;
+  }
+
+  #touch {
+    bottom: 14px;
+    padding: 0 12px;
+  }
+
+  .ctrl {
+    width: 50px;
+    height: 50px;
+  }
+
+  #reset {
+    top: 65px;
+    right: 14px;
   }
 }
