@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b10">
+  <title>INOVAX: Street Legends</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #080b10;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    main {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at 50% 45%, #18344c 0%, #080b10 70%);
+    }
+
+    .studio {
+      color: #76d7ff;
+      font-size: 12px;
+      letter-spacing: 6px;
+    }
+
+    h1 {
+      margin: 18px 0 8px;
+      font-size: clamp(35px, 8vw, 68px);
+      letter-spacing: 5px;
+    }
+
+    p {
+      color: #a9b9ca;
+      line-height: 1.7;
+    }
+
+    .status {
+      margin: 26px auto;
+      padding: 12px 18px;
+      width: fit-content;
+      border: 1px solid #344c62;
+      border-radius: 8px;
+      background: #101a27;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    .dot {
+      color: #6ee7a0;
+    }
+
+    button {
+      margin-top: 12px;
+      padding: 14px 24px;
+      border: 0;
+      border-radius: 6px;
+      background: #76d7ff;
+      color: #08111b;
+      font-weight: bold;
+      letter-spacing: 2px;
+      cursor: pointer;
+    }
+
+    footer {
+      margin-top: 45px;
+      color: #718398;
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section>
+      <div class="studio">AN INOVAX GAME PROJECT</div>
+
+      <h1>STREET<br>LEGENDS</h1>
+
+      <p>
+        Own the streets.<br>
+        Build your legend.
+      </p>
+
+      <div class="status">
+        <span class="dot">●</span>
+        PROJECT INITIALIZED
+      </div>
+
+      <button onclick="startGame()">ENTER THE CITY</button>
+
+      <footer>INOVAX · UNDER SUNBEACH GROUP</footer>
+    </section>
+  </main>
+
+  <script>
+    function startGame() {
+      alert(
+        "Welcome to INOVAX: Street Legends! " +
+        "Your 3D world is coming next."
+      );
+    }
+  </script>
+</body>
+</html>
